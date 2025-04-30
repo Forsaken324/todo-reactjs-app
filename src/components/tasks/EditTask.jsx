@@ -84,7 +84,7 @@ const EditTask = () => {
                     ></textarea>
                     <br />
                     <div className="btn-contain">
-                        <button className='add-btn-form' type="submit">Add Task</button>
+                        <button className='add-btn-form' type="submit">Edit</button>
                         <button type='button' onClick={handleCancel} className='cancel-btn'>Cancel</button>
                     </div>
                 </form>
