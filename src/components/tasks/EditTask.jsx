@@ -39,18 +39,30 @@ const EditTask = () => {
 
         // const updatedTask = 
 
-        const currentTask = copy[id];
+        const updatedTasks = [...tasks]
 
-        currentTask.title = titleEdit;
-        currentTask.description = descriptionEdit;
+        const currentTask = updatedTasks[id];
 
+        const editedTask = {
+            title: titleEdit,
+            description: descriptionEdit,
+            completed: currentTask.completed
+        }
 
+        const updatedTaskFiltered = updatedTasks.filter((item) => item !== currentTask);
+
+        // after removing the old task, add the new task
+        const newTaskArray = [...updatedTaskFiltered, editedTask];
+
+        setTask(newTaskArray);
+
+        navigation("/")
     }
 
     return (
         <>
             <div className="form-container">
-                <form>
+                <form onSubmit={handleSubmit}>
                     <p style={{"fontSize": "15px", "paddingBottom": "10px"}}>Welcome to the edit section</p>
                     <label htmlFor="title">Title: </label><br />
                     <input
@@ -68,11 +80,11 @@ const EditTask = () => {
                         cols={20}
                         placeholder="Enter task description"
                         value={descriptionEdit}
-                        onChange={(e) => setDescriptionEdit()}
+                        onChange={(e) => setDescriptionEdit(e.target.value)}
                     ></textarea>
                     <br />
                     <div className="btn-contain">
-                        <button className='add-btn-form' type="submit" onSubmit={handleSubmit}>Add Task</button>
+                        <button className='add-btn-form' type="submit">Add Task</button>
                         <button type='button' onClick={handleCancel} className='cancel-btn'>Cancel</button>
                     </div>
                 </form>
