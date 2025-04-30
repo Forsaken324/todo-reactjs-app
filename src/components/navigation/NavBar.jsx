@@ -4,6 +4,8 @@ import { useState } from "react";
 
 import "./navbar.css";
 
+import { NavLink } from "react-router-dom";
+
 const NavBar = () => {
     const [openNav, setOpenNav] = useState(false);
 
@@ -27,7 +29,7 @@ const NavBar = () => {
                         <IoClose />
                     </div>
                     <ul>
-                        <li><a href="">Home</a></li>
+                        <li><NavLink to="/">Home</NavLink></li>
                         <li><a href="">About</a></li>
                         <li><a href="">More Applications</a></li>
                     </ul>
@@ -38,3 +40,6 @@ const NavBar = () => {
 }
 
 export default NavBar;
+
+
+// npm i react-icons

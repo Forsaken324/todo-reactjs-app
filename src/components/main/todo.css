@@ -1,5 +1,5 @@
 .todo {
-    padding-top: 100px;
+    padding-top: 50px;
 }
 
 .todo-main
@@ -60,6 +60,46 @@
     background: white;
     padding: 10px;
     border-radius: 10px;
+}
+
+.helper-btns
+{
+    margin-top: 40px;
+}
+
+.helper-btns div
+{
+    margin: 5px;
+}
+
+.other-help-btns
+{
+    display: flex;
+    
+}
+
+.delete-btn
+{
+    height: 20px;
+    width: 30px;
+    border: none;
+    background: crimson;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.update-btn
+{
+    height: 20px;
+    width: 30px;
+    border: none;
+    background: teal;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
 }
 
 @media (max-width: 768px)

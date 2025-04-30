@@ -2,7 +2,14 @@ import React, { useContext } from 'react';
 import { TaskContext } from '../../contexts/TaskProvider';
 import './todoform.css';
 
+// router stuff
+
+import { useNavigate } from 'react-router-dom';
+
 const TodoForm = () => {
+
+  let navigate = useNavigate();
+
   const {
     title,
     setTitle,
@@ -15,8 +22,11 @@ const TodoForm = () => {
   } = useContext(TaskContext);
 
   const cancelTask = () => {
-    setSubmited(!submited);
+    navigate("/")
   }
+
+  // navigator
+  
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -41,7 +51,11 @@ const TodoForm = () => {
     setDescription('');
 
     // Trigger submission state change
-    setSubmited(!submited);
+    // setSubmited(!submited); // no need, making use of react router now
+
+    // navigating to home screen
+
+    navigate("/");
   };
 
   return (
@@ -69,7 +83,7 @@ const TodoForm = () => {
           <br />
           <div className="btn-contain">
             <button className='add-btn-form' type="submit">Add Task</button>
-            <button className='cancel-btn' onClick={cancelTask}>Cancel</button>
+            <button type='button' className='cancel-btn' onClick={cancelTask}>Cancel</button>
           </div>
         </form>
       </div>
