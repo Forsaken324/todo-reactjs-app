@@ -37,8 +37,6 @@ const EditTask = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        // const updatedTask = 
-
         const updatedTasks = [...tasks]
 
         const currentTask = updatedTasks[id];
@@ -49,12 +47,14 @@ const EditTask = () => {
             completed: currentTask.completed
         }
 
-        const updatedTaskFiltered = updatedTasks.filter((item) => item !== currentTask);
+        updatedTasks[id] = editedTask;
 
-        // after removing the old task, add the new task
-        const newTaskArray = [...updatedTaskFiltered, editedTask];
+        // const updatedTaskFiltered = updatedTasks.filter((item) => item !== currentTask);
 
-        setTask(newTaskArray);
+        // // after removing the old task, add the new task
+        // const newTaskArray = [editedTask];
+
+        setTask(updatedTasks);
 
         navigation("/")
     }
